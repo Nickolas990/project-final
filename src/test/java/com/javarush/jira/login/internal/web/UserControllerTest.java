@@ -7,6 +7,7 @@ import com.javarush.jira.login.internal.UserMapper;
 import com.javarush.jira.login.internal.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.ResultActions;
@@ -29,6 +30,7 @@ class UserControllerTest extends AbstractControllerTest {
 
     @Autowired
     private UserRepository repository;
+    @Qualifier("userMapperImpl")
     @Autowired
     UserMapper mapper;
 
