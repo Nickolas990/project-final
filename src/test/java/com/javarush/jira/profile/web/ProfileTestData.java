@@ -21,6 +21,8 @@ public class ProfileTestData {
     public static final MatcherFactory.Matcher<ProfileTo> TO_MATCHER = MatcherFactory.usingIgnoringFieldsComparator(ProfileTo.class, "contacts", "mailNotifications");
     public static final Profile profile = new Profile(PROFILE_ID);
 
+    public static final  Set<ContactTo> contacts =Set.of(new ContactTo("github", "adminGitHub"), new ContactTo("tg", "adminTg"), new ContactTo("mobile", "+79111111111"));
+    public static final  Set<String> mailNotifications = Set.of("three_days_before_deadline", "two_days_before_deadline", "one_day_before_deadline", "deadline");
     public static Profile getExpected() {
         Profile expected = new Profile(PROFILE_ID);
         expected.setId(2L);

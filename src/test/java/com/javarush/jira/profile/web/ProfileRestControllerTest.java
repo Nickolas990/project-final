@@ -35,7 +35,7 @@ class ProfileRestControllerTest extends AbstractControllerTest {
 
     @Test
     @WithUserDetails(value = ADMIN_MAIL)
-    void getCurrentUser() throws Exception {
+    void get() throws Exception {
 
         perform(MockMvcRequestBuilders.get(REST_URL))
                 .andExpect(status().isOk())
@@ -48,8 +48,7 @@ class ProfileRestControllerTest extends AbstractControllerTest {
     @WithUserDetails(value = ADMIN_MAIL)
     void update() throws Exception {
         Profile expected = getExpected();
-        Set<ContactTo> contacts =Set.of(new ContactTo("github", "adminGitHub"), new ContactTo("tg", "adminTg"), new ContactTo("mobile", "+79111111111"));
-        Set<String> mailNotifications = Set.of("three_days_before_deadline", "two_days_before_deadline", "one_day_before_deadline", "deadline");
+
 
         Profile updated = profileRepository.getExisted(PROFILE_ID);
         ProfileTo updateTo = profileMapper.toTo(updated);
