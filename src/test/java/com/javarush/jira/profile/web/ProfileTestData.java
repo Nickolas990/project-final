@@ -16,13 +16,12 @@ public class ProfileTestData {
     public static final String ADMIN_MAIL = "admin@gmail.com";
     public static final String USER_MAIL = "user@gmail.com";
 
-    public static final MatcherFactory.Matcher<Profile> PROFILE_MATCHER = MatcherFactory.usingIgnoringFieldsComparator(
-            Profile.class);
+    public static final MatcherFactory.Matcher<Profile> PROFILE_MATCHER = MatcherFactory.usingIgnoringFieldsComparator(Profile.class);
     public static final MatcherFactory.Matcher<ProfileTo> TO_MATCHER = MatcherFactory.usingIgnoringFieldsComparator(ProfileTo.class, "contacts", "mailNotifications");
     public static final Profile profile = new Profile(PROFILE_ID);
 
-    public static final  Set<ContactTo> contacts =Set.of(new ContactTo("github", "adminGitHub"), new ContactTo("tg", "adminTg"), new ContactTo("mobile", "+79111111111"));
-    public static final  Set<String> mailNotifications = Set.of("three_days_before_deadline", "two_days_before_deadline", "one_day_before_deadline", "deadline");
+    public static final  Set<ContactTo> CONTACT_TOS =Set.of(new ContactTo("github", "adminGitHub"), new ContactTo("tg", "adminTg"), new ContactTo("mobile", "+79111111111"));
+    public static final  Set<String> MAIL_NOTIFICATIONS = Set.of("three_days_before_deadline", "two_days_before_deadline", "one_day_before_deadline", "deadline");
     public static Profile getExpected() {
         Profile expected = new Profile(PROFILE_ID);
         expected.setId(2L);
