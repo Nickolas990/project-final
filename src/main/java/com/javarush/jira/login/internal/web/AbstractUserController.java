@@ -9,6 +9,7 @@ import com.javarush.jira.login.internal.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.WebDataBinder;
@@ -24,6 +25,7 @@ public abstract class AbstractUserController {
     protected final Logger log = LoggerFactory.getLogger(getClass());
     @Autowired
     protected UserRepository repository;
+    @Qualifier("userMapperImpl")
     @Autowired
     private UserMapper mapper;
     @Autowired
