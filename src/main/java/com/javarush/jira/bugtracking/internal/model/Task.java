@@ -66,7 +66,7 @@ public class Task extends TitleEntity {
     @ElementCollection(fetch = FetchType.EAGER)
     @JoinColumn()
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<@Size(min = 2, max = 32) String> tags = Set.of();
+    private Set<@Size(min = 2, max = 32) String> tags;
 
     @OneToMany(mappedBy = "task", fetch = FetchType.LAZY)
     private List<Activity> activities;

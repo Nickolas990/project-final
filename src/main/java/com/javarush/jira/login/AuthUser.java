@@ -1,5 +1,6 @@
 package com.javarush.jira.login;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
@@ -8,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 import static java.util.Objects.requireNonNull;
 
+@EqualsAndHashCode(callSuper = true)
 public class AuthUser extends org.springframework.security.core.userdetails.User {
 
     @Getter

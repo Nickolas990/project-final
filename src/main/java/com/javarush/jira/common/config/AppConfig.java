@@ -14,10 +14,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
 import org.springframework.http.ProblemDetail;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+
+import javax.sql.DataSource;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Executor;
 
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
@@ -31,6 +35,8 @@ import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 public class AppConfig {
 
     private final AppProperties appProperties;
+
+    @Autowired
     private final Environment env;
 
     @Bean(name = "mailExecutor")

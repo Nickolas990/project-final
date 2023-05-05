@@ -2,10 +2,12 @@ package com.javarush.jira.login.internal.sociallogin;
 
 import com.javarush.jira.login.AuthUser;
 import com.javarush.jira.login.User;
+import lombok.EqualsAndHashCode;
 import lombok.NonNull;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Map;
+
 
 public class CustomOAuth2User extends AuthUser implements OAuth2User {
     private final OAuth2User oauth2User;

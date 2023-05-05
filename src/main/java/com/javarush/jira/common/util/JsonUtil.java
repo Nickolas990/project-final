@@ -48,4 +48,10 @@ public class JsonUtil {
         map.put(addName, addValue);
         return writeValue(map);
     }
+
+    public static <T> String writeSeveralAdditionalProps(T obj, Map<String, Object> addValues) {
+        Map<String, Object> map = mapper.convertValue(obj, new TypeReference<>(){});
+        map.putAll(addValues);
+        return writeValue(map);
+    }
 }
