@@ -38,6 +38,12 @@ class ProfileRestControllerTest extends AbstractControllerTest {
                 .andExpect(TO_MATCHER.contentJson(profileMapper.toTo(profile)));
     }
 
+//    @Test
+//    @WithUserDetails(value = ADMIN_MAIL)
+//    void getDifferentProfile() throws Exception {
+//
+//    }
+
     @Test
     @WithUserDetails(value = ADMIN_MAIL)
     void update() throws Exception {
@@ -52,6 +58,5 @@ class ProfileRestControllerTest extends AbstractControllerTest {
                 .andExpect(status().isNoContent());
 
         PROFILE_MATCHER.assertMatch(profileRepository.getExisted(PROFILE_ID), expected);
-
     }
 }

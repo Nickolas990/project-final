@@ -22,7 +22,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class Contact implements HasId {
     @NotNull
     @Column(name = "id")
